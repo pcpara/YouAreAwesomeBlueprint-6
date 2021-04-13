@@ -1,113 +1,82 @@
-html{
-  background-color: teal;
-}
-@keyframes myAni1{
-  from {transform: rotateZ(0deg);}
-  
-  to {transform: rotateZ(180deg);}
-}
-#div1{
-  width: 100px ;
-  height: 50px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  border: 1px solid black;
-  background-color: teal;
-  color: white;
-  text-align: center;
-
-  animation-name: myAni1;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-}
-      
-
-
-@keyframes myAni2 {
-  from  { transform :scaleY(0);}
-  40%   { transform :scaleY(1);}
-  60%   { transform :scaleY(2);}
-  80%   { transform :scaleY(1);}
-  to    { transform : scaleY(0);}
+html,
+body {
+  height: 100%;
 }
 
-#div0 {
+body {
+  font-family: sans-serif;
+  background-color: #4ea4a7;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-#div2{
-  margin-top: 20px;
-  margin-right: 5px;
-  width:10px ;
-  height: 50px;
-  background-color:white;
 
-  position: relative;
-  animation-name: myAni2;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-delay: 1s;
-  animation-iteration-count: infinite;
-  
+@keyframes dotAnimation {
+  50% {
+    transform: rotate(0.5turn);
+  }
+  100% {
+    transform: rotate(0.5turn);
+  }
 }
-#div3{
-  margin-top: 20px;
-  margin-right: 5px;
-  width:10px ;
-  height: 50px;
-  background-color:white;
 
-  position: relative;
-  animation-name: myAni2;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-delay: 1.5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+.box {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
 }
-#div4{
-  margin-top: 20px;
-  margin-right: 5px;
-  width:10px ;
-  height: 50px;
-  background-color:white;
 
-  position: relative;
-  animation-name: myAni2;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-delay: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+.dots {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  animation: dotAnimation 1s ease-in-out infinite;
+  margin-bottom: 200px;
 }
-#div5{
-  margin-top: 20px;
-  margin-right: 5px;
-  width:10px ;
-  height: 50px;
-  background-color:white;
 
-  position: relative;
-  animation-name: myAni2;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-delay: 4s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+.dot {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+ 
 }
-#div6{
-  margin-top: 20px;
-  margin-right: 5px;
-  width:10px ;
-  height: 50px;
-  background-color:white;
 
-  position: relative;
-  animation-name: myAni2;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-delay: 5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+.lines {
+  width: 150px;
+}
+
+@keyframes lineAnim {
+  0% {
+    transform: none;
+  }
+  25% {
+    transform: scaleY(2);
+  }
+  50%,
+  100% {
+    transform: none;
+  }
+}
+
+.line {
+  width: 20px;
+  height: 80px;
+  background-color: white;
+  animation: lineAnim 1s ease-in-out infinite;
+}
+
+
+.line:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.line:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.line:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.line:nth-child(5) {
+  animation-delay: 0.4s;
 }
